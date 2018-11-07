@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Notes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <button ion-button round (click)="add()" ion-icon>+ Add Note</button>
+
+  <ion-card>
+    <ion-card-content *ngFor="let n of notes">
+        <h1>{{n.name}}</h1>
+        <p>{{n.body}}</p>
+        <p>{{n.date}}</p>
+        <br/>
+        <ion-icon item-right name="create" (click)="updatenote(n)"></ion-icon>
+        <ion-icon item-right name="trash" (click)="deletenote(n.id)"></ion-icon>  
+    <hr/>
+      </ion-card-content>
+  </ion-card>
+
+</ion-content>
